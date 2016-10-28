@@ -13,3 +13,8 @@ function factorialize(num) {
   }
   return result;
 }
+
+function palindrome(str) {
+  let cleanStr = str.replace(/[^A-Za-z0-9]+/g, '').toLowerCase();
+  return cleanStr.localeCompare(cleanStr.split("").reverse().join("")) === 0;
+}
