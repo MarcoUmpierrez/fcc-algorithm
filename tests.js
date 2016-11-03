@@ -59,3 +59,13 @@ test('Return Largest Numbers in Arrays', function(assert) {
    assert.deepEqual(largestOfFour([[13, 27, 18, 26], [4, 5, 1, 3], [32, 35, 37, 39], [1000, 1001, 857, 1]]), [27,5,39,1001], 'largestOfFour([[13, 27, 18, 26], [4, 5, 1, 3], [32, 35, 37, 39], [1000, 1001, 857, 1]]) should return [27,5,39,1001]');
    assert.deepEqual(largestOfFour([[4, 9, 1, 3], [13, 35, 18, 26], [32, 35, 97, 39], [1000000, 1001, 857, 1]]), [9, 35, 97, 1000000], 'largestOfFour([[4, 9, 1, 3], [13, 35, 18, 26], [32, 35, 97, 39], [1000000, 1001, 857, 1]]) should return [9, 35, 97, 1000000]');
 });
+
+test('Confirm the Ending', function(assert) {
+   assert.ok(confirmEnding("Bastian", "n"), 'confirmEnding("Bastian", "n") should return true');
+   assert.notOk(confirmEnding("Connor", "n"), 'confirmEnding("Connor", "n") should return false');
+   assert.notOk(confirmEnding("Walking on water and developing software from a specification are easy if both are frozen", "specification"), 'confirmEnding("Walking on water and developing software from a specification are easy if both are frozen", "specification") should return false');
+   assert.ok(confirmEnding("He has to give me a new name", "name"), 'confirmEnding("He has to give me a new name", "name") should return true');
+   assert.ok(confirmEnding("Open sesame", "same"), 'confirmEnding("Open sesame", "same") should return true');
+   assert.notOk(confirmEnding("Open sesame", "pen"), 'confirmEnding("Open sesame", "pen") should return false');
+   assert.notOk(confirmEnding("If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing", "mountain"), 'confirmEnding("If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing", "mountain") should return false');
+});
