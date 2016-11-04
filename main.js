@@ -54,9 +54,19 @@ function largestOfFour(arr) {
 }
 
 function confirmEnding(str, target) {
-  // "Never give up and good luck will find you."
-  // -- Falcor
   let lengthStr = str.length;
   let lengthTarget = target.length;
   return str.substr(lengthStr - lengthTarget, lengthTarget) === target;
+}
+
+function repeatStringNumTimes(str, num) {
+  if (num > 0) {
+    let result = "";
+    for (let i = 0; i < num; i++) {
+      result += str;
+    }
+
+    return result;
+  }
+  return "";
 }
