@@ -126,3 +126,27 @@ test('Falsy Bouncer', function (assert) {
   assert.deepEqual(bouncer([1, null, NaN, 2, undefined]), [1, 2], 'bouncer([1, null, NaN, 2, undefined]) should return [1, 2]');
 });
 
+test('Seek and Destroy', function (assert) {
+  assert.deepEqual(destroyer([1, 2, 3, 1, 2, 3], 2, 3), [1, 1], 'destroyer([1, 2, 3, 1, 2, 3], 2, 3) should return [1, 1]');
+  assert.deepEqual(destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3), [1, 5, 1], 'destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3) should return [1, 5, 1]');
+  assert.deepEqual(destroyer([3, 5, 1, 2, 2], 2, 3, 5), [1], 'destroyer([3, 5, 1, 2, 2], 2, 3, 5) should return [1]');
+  assert.deepEqual(destroyer([2, 3, 2, 3], 2, 3), [], 'destroyer([2, 3, 2, 3], 2, 3) should return []');
+  assert.deepEqual(destroyer(["tree", "hamburger", 53], "tree", 53), ["hamburger"], 'destroyer(["tree", "hamburger", 53], "tree", 53) should return ["hamburger"]');
+});
+
+test('Where do I belong', function (assert) {
+  assert.equal(getIndexToIns([10, 20, 30, 40, 50], 35), 3, 'getIndexToIns([10, 20, 30, 40, 50], 35) should return 3');
+  assert.equal(getIndexToIns([10, 20, 30, 40, 50], 30), 2, 'getIndexToIns([10, 20, 30, 40, 50], 30) should return 2');
+  assert.equal(getIndexToIns([40, 60], 50), 1, 'getIndexToIns([40, 60], 50) should return 1');
+  assert.equal(getIndexToIns([3, 10, 5], 3), 0, 'getIndexToIns([3, 10, 5], 3) should return 0');
+  assert.equal(getIndexToIns([5, 3, 20, 3], 5), 2, 'getIndexToIns([5, 3, 20, 3], 5) should return 2');
+  assert.equal(getIndexToIns([2, 20, 10], 19), 2, 'getIndexToIns([2, 20, 10], 19) should return 2');
+  assert.equal(getIndexToIns([2, 5, 10], 15), 3, 'getIndexToIns([2, 5, 10], 15) should return 3');
+});
+
+test('Caesars Cipher', function (assert) {
+  assert.equal(rot13("SERR PBQR PNZC"), "FREE CODE CAMP", 'rot13("SERR PBQR PNZC") should decode to "FREE CODE CAMP"');
+  assert.equal(rot13("SERR CVMMN!"), "FREE PIZZA!", 'rot13("SERR CVMMN!") should decode to "FREE PIZZA!"');
+  assert.equal(rot13("SERR YBIR?"), "FREE LOVE?", 'rot13("SERR YBIR?") should decode to "FREE LOVE?"');
+  assert.equal(rot13("GUR DHVPX OEBJA QBT WHZCRQ BIRE GUR YNML SBK."), "THE QUICK BROWN DOG JUMPED OVER THE LAZY FOX.", 'rot13("GUR DHVPX OEBJA QBT WHZCRQ BIRE GUR YNML SBK.") should decode to "THE QUICK BROWN DOG JUMPED OVER THE LAZY FOX."');
+});

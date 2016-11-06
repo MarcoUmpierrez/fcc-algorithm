@@ -72,7 +72,6 @@ function repeatStringNumTimes(str, num) {
 }
 
 function truncateString(str, num) {
-  // Clear out that junk in your trunk
   if (num >= str.length) {
     return str;
   } else {
@@ -86,7 +85,6 @@ function truncateString(str, num) {
 }
 
 function chunkArrayInGroups(arr, size) {
-  // Break it up.
   let result = [];
   for (let i = 0; i < arr.length; i += size) {
     result.push(arr.slice(i, i + size));
@@ -95,7 +93,6 @@ function chunkArrayInGroups(arr, size) {
 }
 
 function slasher(arr, howMany) {
-  // it doesn't always pay to be first
   return arr.splice(howMany, arr.length - howMany);
 }
 
@@ -111,8 +108,47 @@ function mutation(arr) {
 }
 
 function bouncer(arr) {
-  // Don't show a false ID to this bouncer.
   return arr.filter(value => {
     return Boolean(value) ? true : false;
   });
+}
+
+function destroyer(arr) {
+  return arr.filter(value => {
+    for (let i = 0; i < arguments.length; i++) {
+      if (value === arguments[i]) {
+        return false;
+      }
+    }
+    return true;
+  });
+}
+
+function getIndexToIns(arr, num) {
+  let sortedArr = arr.sort((a, b) => {
+    return a - b;
+  });
+
+  for (let i = 0; i < sortedArr.length; i++) {
+    if (num <= sortedArr[i]) {
+      return i;
+    }
+  }
+  return sortedArr.length;
+}
+
+function rot13(str) {
+  let result = '';
+  for (let i = 0; i < str.length; i++) {
+    if (str.substr(i, 1).match(/[A-Z]/)) {
+      let value = str.charCodeAt(i) - 13;
+      if (value <= 64) {
+        value = 90 - (64 - value);
+      }
+      result += String.fromCharCode(value);
+    } else {
+      result += str.substr(i, 1);
+    }
+  }
+  return result;
 }
