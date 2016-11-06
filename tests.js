@@ -118,3 +118,11 @@ test('Mutations', function (assert) {
   assert.notOk(mutation(["hello", "neo"]), 'mutation(["hello", "neo"]) should return false');
   assert.notOk(mutation(["voodoo", "no"]), 'mutation(["voodoo", "no"]) should return false');
 });
+
+test('Falsy Bouncer', function (assert) {
+  assert.deepEqual(bouncer([7, "ate", "", false, 9]), [7, "ate", 9], 'bouncer([7, "ate", "", false, 9]) should return [7, "ate", 9]');
+  assert.deepEqual(bouncer(["a", "b", "c"]), ["a", "b", "c"], 'bouncer(["a", "b", "c"]) should return ["a", "b", "c"]');
+  assert.deepEqual(bouncer([false, null, 0, NaN, undefined, ""]), [], 'bouncer([false, null, 0, NaN, undefined, ""]) should return []');
+  assert.deepEqual(bouncer([1, null, NaN, 2, undefined]), [1, 2], 'bouncer([1, null, NaN, 2, undefined]) should return [1, 2]');
+});
+

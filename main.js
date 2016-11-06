@@ -109,3 +109,10 @@ function mutation(arr) {
   }
   return true;
 }
+
+function bouncer(arr) {
+  // Don't show a false ID to this bouncer.
+  return arr.filter(value => {
+    return Boolean(value) ? true : false;
+  });
+}
