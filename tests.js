@@ -97,3 +97,12 @@ test('Chunky Monkey', function (assert) {
   assert.deepEqual(chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 4), [[0, 1, 2, 3], [4, 5, 6, 7], [8]], 'chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 4) should return [[0, 1, 2, 3], [4, 5, 6, 7], [8]]');
   assert.deepEqual(chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 2), [[0, 1], [2, 3], [4, 5], [6, 7], [8]], 'chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 2) should return [[0, 1], [2, 3], [4, 5], [6, 7], [8]]');
 });
+
+test('Slasher Flick', function (assert) {
+  assert.deepEqual(slasher([1, 2, 3], 2), [3], 'slasher([1, 2, 3], 2) should return [3]');
+  assert.deepEqual(slasher([1, 2, 3], 0), [1, 2, 3], 'slasher([1, 2, 3], 0) should return [1, 2, 3]');
+  assert.deepEqual(slasher([1, 2, 3], 9), [], 'slasher([1, 2, 3], 9) should return []');
+  assert.deepEqual(slasher([1, 2, 3], 4), [], 'slasher([1, 2, 3], 4) should return []');
+  assert.deepEqual(slasher(["burgers", "fries", "shake"], 1), ["fries", "shake"], 'slasher(["burgers", "fries", "shake"], 1) should return ["fries", "shake"]');
+  assert.deepEqual(slasher([1, 2, "chicken", 3, "potatoes", "cheese", 4], 5), ["cheese", 4], 'slasher([1, 2, "chicken", 3, "potatoes", "cheese", 4], 5) should return ["cheese", 4]');
+});

@@ -93,3 +93,9 @@ function chunkArrayInGroups(arr, size) {
   }
   return result;
 }
+
+function slasher(arr, howMany) {
+  // it doesn't always pay to be first
+  return arr.splice(howMany, arr.length - howMany);
+}
+
