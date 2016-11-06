@@ -106,3 +106,15 @@ test('Slasher Flick', function (assert) {
   assert.deepEqual(slasher(["burgers", "fries", "shake"], 1), ["fries", "shake"], 'slasher(["burgers", "fries", "shake"], 1) should return ["fries", "shake"]');
   assert.deepEqual(slasher([1, 2, "chicken", 3, "potatoes", "cheese", 4], 5), ["cheese", 4], 'slasher([1, 2, "chicken", 3, "potatoes", "cheese", 4], 5) should return ["cheese", 4]');
 });
+
+test('Mutations', function (assert) {
+  assert.notOk(mutation(["hello", "hey"]), 'mutation(["hello", "hey"]) should return false');
+  assert.ok(mutation(["hello", "Hello"]), 'mutation(["hello", "Hello"]) should return true');
+  assert.ok(mutation(["zyxwvutsrqponmlkjihgfedcba", "qrstu"]), 'mutation(["zyxwvutsrqponmlkjihgfedcba", "qrstu"]) should return true');
+  assert.ok(mutation(["Mary", "Army"]), 'mutation(["Mary", "Army"]) should return true');
+  assert.ok(mutation(["Mary", "Aarmy"]), 'mutation(["Mary", "Aarmy"]) should return true');
+  assert.ok(mutation(["Alien", "line"]), 'mutation(["Alien", "line"]) should return true');
+  assert.ok(mutation(["floor", "for"]), 'mutation(["floor", "for"]) should return true');
+  assert.notOk(mutation(["hello", "neo"]), 'mutation(["hello", "neo"]) should return false');
+  assert.notOk(mutation(["voodoo", "no"]), 'mutation(["voodoo", "no"]) should return false');
+});

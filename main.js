@@ -99,3 +99,13 @@ function slasher(arr, howMany) {
   return arr.splice(howMany, arr.length - howMany);
 }
 
+function mutation(arr) {
+  let arg1 = arr[0].toLowerCase();
+  let arg2 = arr[1].toLowerCase().split('');
+  for (let i = 0; i < arg2.length; i++) {
+    if (arg1.indexOf(arg2[i]) === -1) {
+      return false;
+    }
+  }
+  return true;
+}
