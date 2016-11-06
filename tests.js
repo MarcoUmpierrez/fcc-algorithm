@@ -78,3 +78,12 @@ test('Repeat a string repeat a string', function (assert) {
   assert.equal(repeatStringNumTimes("*", 8), "********", 'repeatStringNumTimes("*", 8) should return "********"');
   assert.equal(repeatStringNumTimes("abc", -2), "", 'repeatStringNumTimes("abc", -2) should return ""');
 });
+
+test('Truncate a string', function (assert) {
+  assert.equal(truncateString("A-tisket a-tasket A green and yellow basket", 11), "A-tisket...", 'truncateString("A-tisket a-tasket A green and yellow basket", 11) should return "A-tisket..."');
+  assert.equal(truncateString("Peter Piper picked a peck of pickled peppers", 14), "Peter Piper...", 'truncateString("Peter Piper picked a peck of pickled peppers", 14) should return "Peter Piper..."');
+  assert.equal(truncateString("A-tisket a-tasket A green and yellow basket", "A-tisket a-tasket A green and yellow basket".length), "A-tisket a-tasket A green and yellow basket", 'truncateString("A-tisket a-tasket A green and yellow basket", "A-tisket a-tasket A green and yellow basket".length) should return "A-tisket a-tasket A green and yellow basket"');
+  assert.equal(truncateString("A-tisket a-tasket A green and yellow basket", "A-tisket a-tasket A green and yellow basket".length + 2), "A-tisket a-tasket A green and yellow basket", 'truncateString("A-tisket a-tasket A green and yellow basket", "A-tisket a-tasket A green and yellow basket".length + 2) should return "A-tisket a-tasket A green and yellow basket"');
+  assert.equal(truncateString("A-", 1), "A...", 'truncateString("A-", 1) should return "A..."');
+  assert.equal(truncateString("Absolutely Longer", 2), "Ab...", 'truncateString("Absolutely Longer", 2) should return "Ab..."');
+});

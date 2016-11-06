@@ -70,3 +70,17 @@ function repeatStringNumTimes(str, num) {
   }
   return "";
 }
+
+function truncateString(str, num) {
+  // Clear out that junk in your trunk
+  if (num >= str.length) {
+    return str;
+  } else {
+    let dotsLength;
+    if (num <= 3) {
+      return `${str.substr(0, num - 0)}...`;
+    } else {
+      return `${str.substr(0, num - 3)}...`;
+    }
+  }
+}
