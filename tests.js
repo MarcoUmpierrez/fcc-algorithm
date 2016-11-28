@@ -4,17 +4,17 @@ test('Testing the test suit', function (assert) {
   assert.ok(true, 'test suit works');
 });
 
-test('Testing the functions of the main.js file', function (assert) {
+test('Testing the functions of the basic.js file', function (assert) {
   assert.ok(bar(), 'function is gotten and returns true');
 });
 
-test('Reverse a String', function (assert) {
+test('Basic:Reverse a String', function (assert) {
   assert.equal(typeof reverseString('hello'), 'string', 'reverseString("hello") should return a string');
   assert.equal(reverseString('hello'), 'olleh', 'reverseString("hello") should become "olleh"');
   assert.equal(reverseString('Greetings from Earth'), 'htraE morf sgniteerG', 'reverseString("Greetings from Earth") should return "htraE morf sgniteerG"');
 });
 
-test('Factorialize a Number', function (assert) {
+test('Basic:Factorialize a Number', function (assert) {
   assert.equal(typeof factorialize(5), 'number', 'factorialize(5) should return a number');
   assert.equal(factorialize(5), 120, 'factorialize(5) should return 120');
   assert.equal(factorialize(10), 3628800, 'factorialize(10) should return 3628800');
@@ -22,7 +22,7 @@ test('Factorialize a Number', function (assert) {
   assert.equal(factorialize(0), 1, 'factorialize(0) should return 1');
 });
 
-test('Check for Palindromes', function (assert) {
+test('Basic:Check for Palindromes', function (assert) {
   assert.equal(typeof palindrome("eye"), 'boolean', 'palindrome("eye") should return a boolean');
   assert.ok(palindrome("eye"), 'palindrome("eye") should return true');
   assert.ok(palindrome("_eye"), 'palindrome("_eye") should return true');
@@ -38,7 +38,7 @@ test('Check for Palindromes', function (assert) {
   assert.notOk(palindrome("five|\_/|four"), 'palindrome("five|\_/|four") should return false');
 });
 
-test('Find the Longest Word in a String', function (assert) {
+test('Basic:Find the Longest Word in a String', function (assert) {
   assert.equal(typeof findLongestWord("The quick brown fox jumped over the lazy dog"), 'number', 'findLongestWord("The quick brown fox jumped over the lazy dog") should return a number');
   assert.equal(findLongestWord("The quick brown fox jumped over the lazy dog"), 6, 'findLongestWord("The quick brown fox jumped over the lazy dog") should return 6');
   assert.equal(findLongestWord("May the force be with you"), 5, 'findLongestWord("May the force be with you") should return 5');
@@ -47,20 +47,20 @@ test('Find the Longest Word in a String', function (assert) {
   assert.equal(findLongestWord("What if we try a super-long word such as otorhinolaryngology"), 19, 'findLongestWord("What if we try a super-long word such as otorhinolaryngology") should return 19');
 });
 
-test('Title Case a Sentence', function (assert) {
+test('Basic:Title Case a Sentence', function (assert) {
   assert.equal(typeof titleCase("I'm a little tea pot"), 'string', 'titleCase("I\'m a little tea pot") should return a string');
   assert.equal(titleCase("I\'m a little tea pot"), "I'm A Little Tea Pot", 'titleCase("I\'m a little tea pot") should return "I\'m A Little Tea Pot"');
   assert.equal(titleCase("sHoRt AnD sToUt"), "Short And Stout", 'titleCase("sHoRt AnD sToUt") should return "Short And Stout"');
   assert.equal(titleCase("HERE IS MY HANDLE HERE IS MY SPOUT"), "Here Is My Handle Here Is My Spout", 'titleCase("HERE IS MY HANDLE HERE IS MY SPOUT") should return "Here Is My Handle Here Is My Spout"');
 });
 
-test('Return Largest Numbers in Arrays', function (assert) {
+test('Basic:Return Largest Numbers in Arrays', function (assert) {
   assert.ok(Array.isArray(largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]])), 'largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]) should return an array');
   assert.deepEqual(largestOfFour([[13, 27, 18, 26], [4, 5, 1, 3], [32, 35, 37, 39], [1000, 1001, 857, 1]]), [27, 5, 39, 1001], 'largestOfFour([[13, 27, 18, 26], [4, 5, 1, 3], [32, 35, 37, 39], [1000, 1001, 857, 1]]) should return [27,5,39,1001]');
   assert.deepEqual(largestOfFour([[4, 9, 1, 3], [13, 35, 18, 26], [32, 35, 97, 39], [1000000, 1001, 857, 1]]), [9, 35, 97, 1000000], 'largestOfFour([[4, 9, 1, 3], [13, 35, 18, 26], [32, 35, 97, 39], [1000000, 1001, 857, 1]]) should return [9, 35, 97, 1000000]');
 });
 
-test('Confirm the Ending', function (assert) {
+test('Basic:Confirm the Ending', function (assert) {
   assert.ok(confirmEnding("Bastian", "n"), 'confirmEnding("Bastian", "n") should return true');
   assert.notOk(confirmEnding("Connor", "n"), 'confirmEnding("Connor", "n") should return false');
   assert.notOk(confirmEnding("Walking on water and developing software from a specification are easy if both are frozen", "specification"), 'confirmEnding("Walking on water and developing software from a specification are easy if both are frozen", "specification") should return false');
@@ -70,7 +70,7 @@ test('Confirm the Ending', function (assert) {
   assert.notOk(confirmEnding("If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing", "mountain"), 'confirmEnding("If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing", "mountain") should return false');
 });
 
-test('Repeat a string repeat a string', function (assert) {
+test('Basic:Repeat a string repeat a string', function (assert) {
   assert.equal(repeatStringNumTimes("*", 3), "***", 'repeatStringNumTimes("*", 3) should return "***"');
   assert.equal(repeatStringNumTimes("abc", 3), "abcabcabc", 'repeatStringNumTimes("abc", 3) should return "abcabcabc"');
   assert.equal(repeatStringNumTimes("abc", 4), "abcabcabcabc", 'repeatStringNumTimes("abc", 4) should return "abcabcabcabc"');
@@ -79,7 +79,7 @@ test('Repeat a string repeat a string', function (assert) {
   assert.equal(repeatStringNumTimes("abc", -2), "", 'repeatStringNumTimes("abc", -2) should return ""');
 });
 
-test('Truncate a string', function (assert) {
+test('Basic:Truncate a string', function (assert) {
   assert.equal(truncateString("A-tisket a-tasket A green and yellow basket", 11), "A-tisket...", 'truncateString("A-tisket a-tasket A green and yellow basket", 11) should return "A-tisket..."');
   assert.equal(truncateString("Peter Piper picked a peck of pickled peppers", 14), "Peter Piper...", 'truncateString("Peter Piper picked a peck of pickled peppers", 14) should return "Peter Piper..."');
   assert.equal(truncateString("A-tisket a-tasket A green and yellow basket", "A-tisket a-tasket A green and yellow basket".length), "A-tisket a-tasket A green and yellow basket", 'truncateString("A-tisket a-tasket A green and yellow basket", "A-tisket a-tasket A green and yellow basket".length) should return "A-tisket a-tasket A green and yellow basket"');
@@ -88,7 +88,7 @@ test('Truncate a string', function (assert) {
   assert.equal(truncateString("Absolutely Longer", 2), "Ab...", 'truncateString("Absolutely Longer", 2) should return "Ab..."');
 });
 
-test('Chunky Monkey', function (assert) {
+test('Basic:Chunky Monkey', function (assert) {
   assert.deepEqual(chunkArrayInGroups(["a", "b", "c", "d"], 2), [["a", "b"], ["c", "d"]], 'chunkArrayInGroups(["a", "b", "c", "d"], 2) should return [["a", "b"], ["c", "d"]]');
   assert.deepEqual(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 3), [[0, 1, 2], [3, 4, 5]], 'chunkArrayInGroups([0, 1, 2, 3, 4, 5], 3) should return [[0, 1, 2], [3, 4, 5]]');
   assert.deepEqual(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 2), [[0, 1], [2, 3], [4, 5]], 'chunkArrayInGroups([0, 1, 2, 3, 4, 5], 2) should return [[0, 1], [2, 3], [4, 5]]');
@@ -98,7 +98,7 @@ test('Chunky Monkey', function (assert) {
   assert.deepEqual(chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 2), [[0, 1], [2, 3], [4, 5], [6, 7], [8]], 'chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 2) should return [[0, 1], [2, 3], [4, 5], [6, 7], [8]]');
 });
 
-test('Slasher Flick', function (assert) {
+test('Basic:Slasher Flick', function (assert) {
   assert.deepEqual(slasher([1, 2, 3], 2), [3], 'slasher([1, 2, 3], 2) should return [3]');
   assert.deepEqual(slasher([1, 2, 3], 0), [1, 2, 3], 'slasher([1, 2, 3], 0) should return [1, 2, 3]');
   assert.deepEqual(slasher([1, 2, 3], 9), [], 'slasher([1, 2, 3], 9) should return []');
@@ -107,7 +107,7 @@ test('Slasher Flick', function (assert) {
   assert.deepEqual(slasher([1, 2, "chicken", 3, "potatoes", "cheese", 4], 5), ["cheese", 4], 'slasher([1, 2, "chicken", 3, "potatoes", "cheese", 4], 5) should return ["cheese", 4]');
 });
 
-test('Mutations', function (assert) {
+test('Basic:Mutations', function (assert) {
   assert.notOk(mutation(["hello", "hey"]), 'mutation(["hello", "hey"]) should return false');
   assert.ok(mutation(["hello", "Hello"]), 'mutation(["hello", "Hello"]) should return true');
   assert.ok(mutation(["zyxwvutsrqponmlkjihgfedcba", "qrstu"]), 'mutation(["zyxwvutsrqponmlkjihgfedcba", "qrstu"]) should return true');
@@ -119,14 +119,14 @@ test('Mutations', function (assert) {
   assert.notOk(mutation(["voodoo", "no"]), 'mutation(["voodoo", "no"]) should return false');
 });
 
-test('Falsy Bouncer', function (assert) {
+test('Basic:Falsy Bouncer', function (assert) {
   assert.deepEqual(bouncer([7, "ate", "", false, 9]), [7, "ate", 9], 'bouncer([7, "ate", "", false, 9]) should return [7, "ate", 9]');
   assert.deepEqual(bouncer(["a", "b", "c"]), ["a", "b", "c"], 'bouncer(["a", "b", "c"]) should return ["a", "b", "c"]');
   assert.deepEqual(bouncer([false, null, 0, NaN, undefined, ""]), [], 'bouncer([false, null, 0, NaN, undefined, ""]) should return []');
   assert.deepEqual(bouncer([1, null, NaN, 2, undefined]), [1, 2], 'bouncer([1, null, NaN, 2, undefined]) should return [1, 2]');
 });
 
-test('Seek and Destroy', function (assert) {
+test('Basic:Seek and Destroy', function (assert) {
   assert.deepEqual(destroyer([1, 2, 3, 1, 2, 3], 2, 3), [1, 1], 'destroyer([1, 2, 3, 1, 2, 3], 2, 3) should return [1, 1]');
   assert.deepEqual(destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3), [1, 5, 1], 'destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3) should return [1, 5, 1]');
   assert.deepEqual(destroyer([3, 5, 1, 2, 2], 2, 3, 5), [1], 'destroyer([3, 5, 1, 2, 2], 2, 3, 5) should return [1]');
@@ -134,7 +134,7 @@ test('Seek and Destroy', function (assert) {
   assert.deepEqual(destroyer(["tree", "hamburger", 53], "tree", 53), ["hamburger"], 'destroyer(["tree", "hamburger", 53], "tree", 53) should return ["hamburger"]');
 });
 
-test('Where do I belong', function (assert) {
+test('Basic:Where do I belong', function (assert) {
   assert.equal(getIndexToIns([10, 20, 30, 40, 50], 35), 3, 'getIndexToIns([10, 20, 30, 40, 50], 35) should return 3');
   assert.equal(getIndexToIns([10, 20, 30, 40, 50], 30), 2, 'getIndexToIns([10, 20, 30, 40, 50], 30) should return 2');
   assert.equal(getIndexToIns([40, 60], 50), 1, 'getIndexToIns([40, 60], 50) should return 1');
@@ -144,9 +144,104 @@ test('Where do I belong', function (assert) {
   assert.equal(getIndexToIns([2, 5, 10], 15), 3, 'getIndexToIns([2, 5, 10], 15) should return 3');
 });
 
-test('Caesars Cipher', function (assert) {
+test('Basic:Caesars Cipher', function (assert) {
   assert.equal(rot13("SERR PBQR PNZC"), "FREE CODE CAMP", 'rot13("SERR PBQR PNZC") should decode to "FREE CODE CAMP"');
   assert.equal(rot13("SERR CVMMN!"), "FREE PIZZA!", 'rot13("SERR CVMMN!") should decode to "FREE PIZZA!"');
   assert.equal(rot13("SERR YBIR?"), "FREE LOVE?", 'rot13("SERR YBIR?") should decode to "FREE LOVE?"');
   assert.equal(rot13("GUR DHVPX OEBJA QBT WHZCRQ BIRE GUR YNML SBK."), "THE QUICK BROWN DOG JUMPED OVER THE LAZY FOX.", 'rot13("GUR DHVPX OEBJA QBT WHZCRQ BIRE GUR YNML SBK.") should decode to "THE QUICK BROWN DOG JUMPED OVER THE LAZY FOX."');
+});
+
+test('Intermediate:Sum All Numbers in a Range', function (assert) {
+  assert.equal(typeof sumAll([1, 4]), "number", 'sumAll([1, 4]) should return a number');
+  assert.equal(sumAll([1, 4]), 10, 'sumAll([1, 4]) should return 10');
+  assert.equal(sumAll([4, 1]), 10, 'sumAll([4, 1]) should return 10');
+  assert.equal(sumAll([5, 10]), 45, 'sumAll([5, 10]) should return 45');
+  assert.equal(sumAll([10, 5]), 45, 'sumAll([10, 5]) should return 45');
+});
+
+test('Intermediate:Diff Two Arrays', function (assert) {
+  assert.ok(Array.isArray(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5])), 'diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]) should return an array');
+  assert.deepEqual(
+    diffArray(["diorite", "andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]), 
+    ["pink wool"], 
+    'diffArray(["diorite", "andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]) should return ["pink wool"]');
+  assert.deepEqual(
+    diffArray(["andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]), 
+    ["pink wool","diorite"], 
+    'diffArray(["andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]) should return ["diorite", "pink wool"]');
+  assert.deepEqual(
+    diffArray(["andesite", "grass", "dirt", "dead shrub"], ["andesite", "grass", "dirt", "dead shrub"]), 
+    [], 
+    'diffArray(["andesite", "grass", "dirt", "dead shrub"], ["andesite", "grass", "dirt", "dead shrub"]) should return []');
+  assert.deepEqual(
+    diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]), 
+    [4], 
+    'diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]) should return [4]');
+  assert.deepEqual(
+    diffArray([1, "calf", 3, "piglet"], [1, "calf", 3, 4]), 
+    ["piglet", 4], 
+    'diffArray([1, "calf", 3, "piglet"], [1, "calf", 3, 4]) should return ["piglet", 4]');  
+  assert.deepEqual(
+    diffArray([], ["snuffleupagus", "cookie monster", "elmo"]), 
+    ["snuffleupagus", "cookie monster", "elmo"], 
+    'diffArray([], ["snuffleupagus", "cookie monster", "elmo"]) should return ["snuffleupagus", "cookie monster", "elmo"]');      
+  assert.deepEqual(
+    diffArray([1, "calf", 3, "piglet"], [7, "filly"]), 
+    [1, "calf", 3, "piglet", 7, "filly"], 
+    'diffArray([1, "calf", 3, "piglet"], [7, "filly"]) should return [1, "calf", 3, "piglet", 7, "filly"]');   
+});
+
+test('Intermediate:Roman Numeral Converter', function (assert) {
+  assert.equal(convertToRoman(2), "II", 'convertToRoman(2) should return "II"');
+  assert.equal(convertToRoman(3), "III",'convertToRoman(3) should return "III"');
+  assert.equal(convertToRoman(4), "IV",'convertToRoman(4) should return "IV"');
+  assert.equal(convertToRoman(5), "V",'convertToRoman(5) should return "V"');
+  assert.equal(convertToRoman(9), "IX",'convertToRoman(9) should return "IX"');
+  assert.equal(convertToRoman(12), "XII",'convertToRoman(12) should return "XII"');
+  assert.equal(convertToRoman(16), "XVI",'convertToRoman(16) should return "XVI"');
+  assert.equal(convertToRoman(29), "XXIX",'convertToRoman(29) should return "XXIX"');
+  assert.equal(convertToRoman(44), "XLIV",'convertToRoman(44) should return "XLIV"');
+  assert.equal(convertToRoman(45), "XLV",'convertToRoman(45) should return "XLV"');
+  assert.equal(convertToRoman(68),"LXVIII",'convertToRoman(68) should return "LXVIII"');
+  assert.equal(convertToRoman(83), "LXXXIII",'convertToRoman(83) should return "LXXXIII"');
+  assert.equal(convertToRoman(97), "XCVII",'convertToRoman(97) should return "XCVII"');
+  assert.equal(convertToRoman(99), "XCIX",'convertToRoman(99) should return "XCIX"');
+  assert.equal(convertToRoman(500), "D",'convertToRoman(500) should return "D"');
+  assert.equal(convertToRoman(501), "DI",'convertToRoman(501) should return "DI"');
+  assert.equal(convertToRoman(649), "DCXLIX",'convertToRoman(649) should return "DCXLIX"');
+  assert.equal(convertToRoman(798), "DCCXCVIII",'convertToRoman(798) should return "DCCXCVIII"');
+  assert.equal(convertToRoman(891), "DCCCXCI", 'convertToRoman(891) should return "DCCCXCI"');
+  assert.equal(convertToRoman(1000), "M",'convertToRoman(1000) should return "M"');
+  assert.equal(convertToRoman(1004), "MIV",'convertToRoman(1004) should return "MIV"');
+  assert.equal(convertToRoman(1006), "MVI",'convertToRoman(1006) should return "MVI"');
+  assert.equal(convertToRoman(1023), "MXXIII", 'convertToRoman(1023) should return "MXXIII"');
+  assert.equal(convertToRoman(2014), "MMXIV", 'convertToRoman(2014) should return "MMXIV"');
+  assert.equal(convertToRoman(3999), "MMMCMXCIX", 'convertToRoman(3999) should return "MMMCMXCIX"');
+});
+
+test('Intermediate:Wherefore art thou', function (assert) {
+  assert.deepEqual(
+    whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" }), 
+    [{ first: "Tybalt", last: "Capulet" }], 
+    'whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" }) should return [{ first: "Tybalt", last: "Capulet" }]');
+  assert.deepEqual(
+    whatIsInAName([{ "a": 1 }, { "a": 1 }, { "a": 1, "b": 2 }], { "a": 1 }), 
+    [{ "a": 1 }, { "a": 1 }, { "a": 1, "b": 2 }], 
+    'whatIsInAName([{ "a": 1 }, { "a": 1 }, { "a": 1, "b": 2 }], { "a": 1 }) should return [{ "a": 1 }, { "a": 1 }, { "a": 1, "b": 2 }]');
+  assert.deepEqual(
+    whatIsInAName([{ "a": 1, "b": 2 }, { "a": 1 }, { "a": 1, "b": 2, "c": 2 }], { "a": 1, "b": 2 }), 
+    [{ "a": 1, "b": 2 }, { "a": 1, "b": 2, "c": 2 }], 
+    'whatIsInAName([{ "a": 1, "b": 2 }, { "a": 1 }, { "a": 1, "b": 2, "c": 2 }], { "a": 1, "b": 2 }) should return [{ "a": 1, "b": 2 }, { "a": 1, "b": 2, "c": 2 }]');
+  assert.deepEqual(
+    whatIsInAName([{ "a": 1, "b": 2 }, { "a": 1 }, { "a": 1, "b": 2, "c": 2 }], { "a": 1, "c": 2 }), 
+    [{ "a": 1, "b": 2, "c": 2 }], 
+    'whatIsInAName([{ "a": 1, "b": 2 }, { "a": 1 }, { "a": 1, "b": 2, "c": 2 }], { "a": 1, "c": 2 }) should return [{ "a": 1, "b": 2, "c": 2 }]');
+});
+
+test('Intermediate:Search and Replace', function (assert) {
+  assert.equal(myReplace("Let us go to the store", "store", "mall"), "Let us go to the mall", 'myReplace("Let us go to the store", "store", "mall") should return "Let us go to the mall"');
+  assert.equal(myReplace("He is Sleeping on the couch", "Sleeping", "sitting"), "He is Sitting on the couch", 'myReplace("He is Sleeping on the couch", "Sleeping", "sitting") should return "He is Sitting on the couch"');
+  assert.equal(myReplace("This has a spellngi error", "spellngi", "spelling"), "This has a spelling error", 'myReplace("This has a spellngi error", "spellngi", "spelling") should return "This has a spelling error"');
+  assert.equal(myReplace("His name is Tom", "Tom", "john"), "His name is John", 'myReplace("His name is Tom", "Tom", "john") should return "His name is John"');
+  assert.equal(myReplace("Let us get back to more Coding", "Coding", "algorithms"), "Let us get back to more Algorithms", 'myReplace("Let us get back to more Coding", "Coding", "algorithms") should return "Let us get back to more Algorithms"');
 });

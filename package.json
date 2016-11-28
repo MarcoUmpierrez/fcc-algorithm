@@ -2,7 +2,7 @@
   "name": "fcc-algorithm",
   "version": "0.0.0",
   "description": "Algorithms of the free code camp",
-  "main": "index.js",
+  "main": "basic.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/marcoumpierrez/fcc-algorithm.git"
