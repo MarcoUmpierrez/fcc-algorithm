@@ -245,3 +245,54 @@ test('Intermediate:Search and Replace', function (assert) {
   assert.equal(myReplace("His name is Tom", "Tom", "john"), "His name is John", 'myReplace("His name is Tom", "Tom", "john") should return "His name is John"');
   assert.equal(myReplace("Let us get back to more Coding", "Coding", "algorithms"), "Let us get back to more Algorithms", 'myReplace("Let us get back to more Coding", "Coding", "algorithms") should return "Let us get back to more Algorithms"');
 });
+
+test('Intermediate:Pig Latin', function (assert) {
+  assert.equal(translatePigLatin("california"), "aliforniacay", 'translatePigLatin("california") should return "aliforniacay"');
+  assert.equal(translatePigLatin("paragraphs"), "aragraphspay", 'translatePigLatin("paragraphs") should return "aragraphspay"');
+  assert.equal(translatePigLatin("glove"), "oveglay", 'translatePigLatin("glove") should return "oveglay"');
+  assert.equal(translatePigLatin("algorithm"), "algorithmway", 'translatePigLatin("algorithm") should return "algorithmway"');
+  assert.equal(translatePigLatin("eight"), "eightway", 'translatePigLatin("eight") should return "eightway"');
+});
+
+test('Intermediate:DNA Pairing', function (assert) {
+  assert.deepEqual(pairElement("ATCGA"), [["A","T"],["T","A"],["C","G"],["G","C"],["A","T"]], 'pairElement("ATCGA") should return [["A","T"],["T","A"],["C","G"],["G","C"],["A","T"]]');
+  assert.deepEqual(pairElement("TTGAG"), [["T","A"],["T","A"],["G","C"],["A","T"],["G","C"]], 'pairElement("TTGAG") should return [["T","A"],["T","A"],["G","C"],["A","T"],["G","C"]]');
+  assert.deepEqual(pairElement("CTCTA"), [["C","G"],["T","A"],["C","G"],["T","A"],["A","T"]], 'pairElement("CTCTA") should return [["C","G"],["T","A"],["C","G"],["T","A"],["A","T"]]');
+});
+
+test('Intermediate:Missing letters', function (assert) {
+  assert.equal(fearNotLetter("abce"), "d", 'fearNotLetter("abce") should return "d"');
+  assert.equal(fearNotLetter("abcdefghjklmno"), "i", 'fearNotLetter("abcdefghjklmno") should return "i"');
+  assert.equal(fearNotLetter("bcd"), undefined, 'fearNotLetter("bcd") should return undefined');
+  assert.equal(fearNotLetter("yz"), undefined, 'fearNotLetter("yz") should return undefined');
+});
+
+test('Intermediate:Boo who', function (assert) {
+  assert.ok(booWho(true), 'booWho(true) should return true');
+  assert.ok(booWho(false), 'booWho(false) should return true');
+  assert.notOk(booWho([1, 2, 3]), 'booWho([1, 2, 3]) should return false');
+  assert.notOk(booWho([].slice), 'booWho([].slice) should return false');
+  assert.notOk(booWho({ "a": 1 }), 'booWho({ "a": 1 }) should return false');
+  assert.notOk(booWho(1), 'booWho(1) should return false');
+  assert.notOk(booWho(NaN), 'booWho(NaN) should return false');
+  assert.notOk(booWho("a"), 'booWho("a") should return false');
+  assert.notOk(booWho("true"), 'booWho("true") should return false');
+  assert.notOk(booWho("false"), 'booWho("false") should return false');
+});
+
+test('Intermediate:Sorted Union', function (assert) {
+  assert.deepEqual(uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]), [1, 3, 2, 5, 4], 'uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]) should return [1, 3, 2, 5, 4]');
+  assert.deepEqual(uniteUnique([1, 3, 2], [1, [5]], [2, [4]]), [1, 3, 2, [5], [4]], 'uniteUnique([1, 3, 2], [1, [5]], [2, [4]]) should return [1, 3, 2, [5], [4]]');
+  assert.deepEqual(uniteUnique([1, 2, 3], [5, 2, 1]), [1, 2, 3, 5], 'uniteUnique([1, 2, 3], [5, 2, 1]) should return [1, 2, 3, 5]');
+  assert.deepEqual(uniteUnique([1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8]), [1, 2, 3, 5, 4, 6, 7, 8], 'uniteUnique([1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8]) should return [1, 2, 3, 5, 4, 6, 7, 8]');
+});
+
+test('Intermediate:Convert HTML Entities', function (assert) {
+  assert.equal(convertHTML("Dolce & Gabbana"), "Dolce &amp; Gabbana", 'convertHTML("Dolce & Gabbana") should return Dolce &​amp; Gabbana');
+  assert.equal(convertHTML("Hamburgers < Pizza < Tacos"), "Hamburgers &lt; Pizza &lt; Tacos", 'convertHTML("Hamburgers < Pizza < Tacos") should return Hamburgers &​lt; Pizza &​lt; Tacos');
+  assert.equal(convertHTML("Sixty > twelve"), "Sixty &gt; twelve", 'convertHTML("Sixty > twelve") should return Sixty &​gt; twelve');
+  assert.equal(convertHTML('Stuff in "quotation marks"'), "Stuff in &quot;quotation marks&quot;", 'convertHTML(\'Stuff in "quotation marks"\') should return Stuff in &​quot;quotation marks&​quot;');
+  assert.equal(convertHTML("Shindler's List"), "Shindler&apos;s List", 'convertHTML("Shindler\'s List") should return Shindler&​apos;s List');
+  assert.equal(convertHTML("<>"), "&lt;&gt;", 'convertHTML("<>") should return &​lt;&​gt;');
+  assert.equal(convertHTML("abc"), "abc", 'convertHTML("abc") should return abc');
+});
