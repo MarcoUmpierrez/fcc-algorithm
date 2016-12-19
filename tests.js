@@ -304,3 +304,12 @@ test('Intermediate:Spinal Tap Case', function (assert) {
   assert.equal(spinalCase("Teletubbies say Eh-oh"), "teletubbies-say-eh-oh", 'spinalCase("Teletubbies say Eh-oh") should return "teletubbies-say-eh-oh"');
   assert.equal(spinalCase("AllThe-small Things"), "all-the-small-things", 'spinalCase("AllThe-small Things") should return "all-the-small-things"');
 });
+
+test('Intermediate:Sum All Odd Fibonacci Numbers', function (assert) {
+  assert.equal(typeof sumFibs(1), "number", 'sumFibs(1) should return a number');
+  assert.equal(sumFibs(1000), 1785, 'sumFibs(1000) should return 1785');
+  assert.equal(sumFibs(4000000), 4613732, 'sumFibs(4000000) should return 4613732');
+  assert.equal(sumFibs(4), 5, 'sumFibs(4) should return 5');
+  assert.equal(sumFibs(75024), 60696, 'sumFibs(75024) should return 60696');
+  assert.equal(sumFibs(75025), 135721, 'sumFibs(75025) should return 135721');
+});

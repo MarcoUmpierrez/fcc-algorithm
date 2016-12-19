@@ -181,7 +181,7 @@ function spinalCase(str) {
   while (index < str.length) {
     if (isLetter(str[index])) {
       if (!isLowerCase(str[index])) {
-        result += index === 0? str[index].toLowerCase():'-' + str[index].toLowerCase(); 
+        result += index === 0 ? str[index].toLowerCase() : '-' + str[index].toLowerCase();
       } else {
         result += str[index];
       }
@@ -190,6 +190,25 @@ function spinalCase(str) {
       index++;
     }
     index++;
+  }
+  return result;
+}
+
+function sumFibs(num) {
+  let fibNumbers = [];
+  let x = 0, y = 1, z = 1;
+  for (let i = 0; z <= num; i++) {
+    fibNumbers.push(z);
+    x = y;
+    y = z;
+    z = x + y;
+  }
+  fibNumbers.unshift(1);
+  let result = 0;
+  for (let i = 0; i < fibNumbers.length; i++) {
+    if (fibNumbers[i] % 2 !== 0) {
+      result += fibNumbers[i];
+    }
   }
   return result;
 }
