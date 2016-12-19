@@ -296,3 +296,11 @@ test('Intermediate:Convert HTML Entities', function (assert) {
   assert.equal(convertHTML("<>"), "&lt;&gt;", 'convertHTML("<>") should return &​lt;&​gt;');
   assert.equal(convertHTML("abc"), "abc", 'convertHTML("abc") should return abc');
 });
+
+test('Intermediate:Spinal Tap Case', function (assert) {
+  assert.equal(spinalCase("This Is Spinal Tap"), "this-is-spinal-tap", 'spinalCase("This Is Spinal Tap") should return "this-is-spinal-tap"');
+  assert.equal(spinalCase("thisIsSpinalTap"), "this-is-spinal-tap", 'spinalCase("thisIsSpinalTap") should return "this-is-spinal-tap"');
+  assert.equal(spinalCase("The_Andy_Griffith_Show"), "the-andy-griffith-show", 'spinalCase("The_Andy_Griffith_Show") should return "the-andy-griffith-show"');
+  assert.equal(spinalCase("Teletubbies say Eh-oh"), "teletubbies-say-eh-oh", 'spinalCase("Teletubbies say Eh-oh") should return "teletubbies-say-eh-oh"');
+  assert.equal(spinalCase("AllThe-small Things"), "all-the-small-things", 'spinalCase("AllThe-small Things") should return "all-the-small-things"');
+});
